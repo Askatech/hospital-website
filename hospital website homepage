@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hospital Service Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background: #0066cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #004080;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background: #003366;
+    }
+    .container {
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    button {
+      background: #0066cc;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004080;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hospital Service Management</h1>
+    <p>Efficient care, accessible anytime</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#appointments">Appointments</a>
+    <a href="#portal">Patient Portal</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <section id="services" class="card">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Cardiology</li>
+        <li>Pediatrics</li>
+        <li>Emergency Care</li>
+        <li>Laboratory & Diagnostics</li>
+      </ul>
+    </section>
+
+    <section id="appointments" class="card">
+      <h2>Book an Appointment</h2>
+      <form onsubmit="bookAppointment(event)">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" required><br><br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" required><br><br>
+        <button type="submit">Book Now</button>
+      </form>
+      <p id="confirmation"></p>
+    </section>
+
+    <section id="portal" class="card">
+      <h2>Patient Portal</h2>
+      <p>Login to view your medical records, prescriptions, and billing.</p>
+      <button onclick="alert('Redirecting to secure login...')">Login</button>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact Us</h2>
+      <p>📍 Hospital Road, Gombe State, Nigeria</p>
+      <p>📞 Emergency: <a href="tel:+2348001234567">+234 800 123 4567</a></p>
+      <p>📧 Email: info@hospital.com</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Hospital Service Management | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function bookAppointment(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const date = document.getElementById('date').value;
+      document.getElementById('confirmation').innerText =
+        `Thank you, ${name}. Your appointment is booked for ${date}.`;
+    }
+  </script>
+
+</body>
+</html>
